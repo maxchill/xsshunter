@@ -202,10 +202,14 @@ function hook_load_if_not_ready() {
         } catch ( e ) {
             probe_return_data['dom'] = '';
         }
-        html2canvas(document.body).then(function(canvas) {
-            probe_return_data['screenshot'] = canvas.toDataURL();
-            finishing_moves();
-        });
+
+        probe_return_data['screenshot'] = '';
+ 
+	//html2canvas(document.body).then(function(canvas) {
+        //    probe_return_data['screenshot'] = canvas.toDataURL();
+        //    finishing_moves();
+        //});
+
     } catch( e ) {
         probe_return_data['screenshot'] = '';
         finishing_moves();
